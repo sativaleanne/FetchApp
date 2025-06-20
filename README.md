@@ -14,25 +14,31 @@ A native Android app in Kotlin that retrieves data from https://hiring.fetch.com
 - Responsive UI built with Jetpack Compose
 - Unit tests added for Repository and ViewModel
 
+## How to Run
+
+1. Clone Repo
+2. Open in Android Studio
+3. Build and Run
+
 ## Architecture
 
 ```plaintext
-+---------------------+
-|  ItemService.kt     |  <-- Retrofit API service
-+---------------------+
+---------------------
+  ItemService.kt       <-- Retrofit API service
+---------------------
           ↓
-+---------------------+
-|  ItemRepository.kt  |  <-- Business logic: filtering, sorting
-+---------------------+
+---------------------
+  ItemRepository.kt    <-- Business logic: filtering, sorting
+---------------------
           ↓
-+---------------------+
-|  ItemViewModel.kt   |  <-- ViewModel exposes StateFlow
-+---------------------+
+---------------------
+  ItemViewModel.kt     <-- ViewModel exposes StateFlow
+---------------------
           ↓
-+---------------------+
-|  MainScreen.kt      |  <-- Compose UI
-|  ListCard.kt        |
-+---------------------+
+---------------------
+  MainScreen.kt        <-- Compose UI
+  ListCard.kt        
+---------------------
 ```
 
 ## Testing
