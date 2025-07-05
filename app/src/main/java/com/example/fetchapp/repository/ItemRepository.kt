@@ -3,10 +3,12 @@ package com.example.fetchapp.repository
 import com.example.fetchapp.model.Item
 import com.example.fetchapp.network.ItemService
 
+// Interface for fetching items in a filtered and sorted format.
 interface ItemRepository {
     suspend fun getFilteredSortedItems(): Map<Int, List<Item>>
 }
 
+// Implementation of ItemRepository that fetches the data.
 class NetworkItemRepository(
     private val itemService: ItemService
 ) : ItemRepository {
@@ -14,7 +16,9 @@ class NetworkItemRepository(
     // Sort and filter out Null and Blank values
     override suspend fun getFilteredSortedItems(): Map<Int, List<Item>> {
         return itemService.getItems()
+            // Remove null or blank
             .filter { !it.name.isNullOrBlank() }
+            // Group by listId
             .groupBy { it.listId }
             .toSortedMap()
             .mapValues { entry ->
