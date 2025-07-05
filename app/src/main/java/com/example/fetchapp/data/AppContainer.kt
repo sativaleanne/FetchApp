@@ -6,10 +6,12 @@ import com.example.fetchapp.repository.NetworkItemRepository
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+// Interface defines abstraction layer for dependency injection.
 interface AppContainer {
     val itemRepository: ItemRepository
 }
 
+// Implementation of AppContainer. Sets up Retrofit and provides instance of ItemRepository.
 class DefaultAppContainer : AppContainer {
     private val baseUrl = "https://hiring.fetch.com/"
 

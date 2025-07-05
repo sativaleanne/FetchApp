@@ -60,6 +60,7 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.converter.kotlinx.serialization)
     implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.androidx.benchmark.common)
     testImplementation(libs.junit)
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
